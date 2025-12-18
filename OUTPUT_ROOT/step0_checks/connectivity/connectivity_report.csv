@@ -1,0 +1,6 @@
+file,n_nodes,n_edges,n_isolates,isolates,n_connected_components,lcc_size
+17_918099.json,40,46,0,,1,40
+20_306098.json,54,62,2,10(5);0(103),4,50
+31_644920.json,67,67,1,13(62),2,66
+33_459135.json,66,72,0,,1,66
+71_523598.json,66,66,0,,4,58

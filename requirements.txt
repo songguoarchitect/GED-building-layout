@@ -1,0 +1,7 @@
+numpy
+pandas
+networkx>=2.8
+shapely
+tqdm
+matplotlib
+infomap

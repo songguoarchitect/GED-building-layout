@@ -1,0 +1,6 @@
+file,best_variant,best_kind,best_value,best_n_nodes,best_n_edges,best_avg_degree,edge_min,edge_max,in_edge_range,edge_dist_to_range
+17_918099.pkl,absolute20,absolute,20.0,39,152,7.794871794871795,120.0,160.0,True,0.0
+20_306098.pkl,relative25,relative,0.25,44,157,7.136363636363637,156.0,208.0,True,0.0
+31_644920.pkl,relative20,relative,0.2,65,227,6.984615384615385,198.0,264.0,True,0.0
+33_459135.pkl,relative20,relative,0.2,63,221,7.015873015873016,198.0,264.0,True,0.0
+71_523598.pkl,relative20,relative,0.2,63,249,7.904761904761905,198.0,264.0,True,0.0

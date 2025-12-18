@@ -1,0 +1,3 @@
+file,group,people_num,n_nodes,n_edges,saved_pkl,saved_png,reason
+A.csv,A,339.0,5,6,D:\6-FaGED\submission\1stRevision\faged\OUTPUT_ROOT\step1_behavior\Group_A.pkl,D:\6-FaGED\submission\1stRevision\faged\OUTPUT_ROOT\step1_behavior\Group_A.png,ok
+B.csv,B,70.0,5,9,D:\6-FaGED\submission\1stRevision\faged\OUTPUT_ROOT\step1_behavior\Group_B.pkl,D:\6-FaGED\submission\1stRevision\faged\OUTPUT_ROOT\step1_behavior\Group_B.png,ok

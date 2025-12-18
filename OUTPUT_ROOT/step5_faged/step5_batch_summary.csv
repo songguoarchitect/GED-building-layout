@@ -1,0 +1,2 @@
+markov_folder,target_folder,reference_folder,output_dir,num_target_graphs,num_reference_graphs,ran_ok
+markov_0_7,D:\6-FaGED\submission\1stRevision\faged\OUTPUT_ROOT\step1_behavior,D:\6-FaGED\submission\1stRevision\faged\OUTPUT_ROOT\step4_prototype\graphs\markov_0_7,D:\6-FaGED\submission\1stRevision\faged\OUTPUT_ROOT\step5_faged\markov_0_7,2,5,True

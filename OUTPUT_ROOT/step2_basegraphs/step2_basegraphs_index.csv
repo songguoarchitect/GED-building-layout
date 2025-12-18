@@ -1,0 +1,6 @@
+file,stem,n_nodes,n_edges,pkl_path,saved,reason
+17_918099.json,17_918099,40,46,D:\6-FaGED\submission\1stRevision\faged\OUTPUT_ROOT\step2_basegraphs\17_918099.pkl,True,ok
+20_306098.json,20_306098,52,62,D:\6-FaGED\submission\1stRevision\faged\OUTPUT_ROOT\step2_basegraphs\20_306098.pkl,True,ok
+31_644920.json,31_644920,66,67,D:\6-FaGED\submission\1stRevision\faged\OUTPUT_ROOT\step2_basegraphs\31_644920.pkl,True,ok
+33_459135.json,33_459135,66,72,D:\6-FaGED\submission\1stRevision\faged\OUTPUT_ROOT\step2_basegraphs\33_459135.pkl,True,ok
+71_523598.json,71_523598,66,66,D:\6-FaGED\submission\1stRevision\faged\OUTPUT_ROOT\step2_basegraphs\71_523598.pkl,True,ok
