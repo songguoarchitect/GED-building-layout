@@ -309,13 +309,21 @@ Step 4: Graph Prototypes                                             |
 Step 5: Function-Aware Graph Edit Distance (FaGED),Distance Ranking
 
 ```
-![Method pipeline](src/figures/pipeline.png)
+<p align="center">
+  <a href="src/figures/pipeline.png">
+    <img src="src/figures/pipeline.png" alt="Method pipeline" width="100%">
+  </a>
+</p>
 
 ---
 ## 4) A Simple Case
 Here we provide a detailed illustration of the proposed framework using a single real-world case study. The selected case is a real large university library building project with a gross floor area exceeding 60,000 m². The experimental setup, parameter choices, and algorithmic configurations used in this appendix are identical to those adopted in the main experiments.
 
-![A simple case](src/figures/case.png)
+<p align="center">
+  <a href="src/figures/case.png">
+    <img src="src/figures/case.png" alt="A simple case" width="100%">
+  </a>
+</p>
 
 
 ---

@@ -47,7 +47,7 @@ run_step2_then_step3(
 
 The complete step-by-step notebook and documentation are hosted on GitHub:
 
-- **GitHub repository**: https://github.com/your-org/faged-pipeline  
+- **GitHub repository**: https://github.com/songguoarchitect/faged  
 - Example notebook: `quick_start.ipynb`  
 
 > Note: PyPI does not reliably render local images (relative paths).  
