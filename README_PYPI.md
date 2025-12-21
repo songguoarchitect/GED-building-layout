@@ -1,6 +1,6 @@
-# Faged_building_layout Pipeline
+# ged_building_layout
 
-**Faged_building_layout Pipeline** is a **research-oriented** Python library for comparing **spatial layouts** and **human behavioral patterns** using **function-aware graph representations**.
+**Ged_building_layout** is a **research-oriented** Python library for comparing **spatial layouts** and **human behavioral patterns** using **function-aware graph representations**.
 
 It can also be used independently to **construct graph representations of complex architectural layouts with open spaces** and to **extract layout prototypes** from such configurations.
 
@@ -12,7 +12,7 @@ It can also be used independently to **construct graph representations of comple
 - **Step-wise pipeline (Step0–Step5)** for reproducible experiments  
 - Layout graph representation for **complex open-space buildings**  
 - **Prototype extraction** via community detection (e.g., Infomap)  
-- **Toged_building_layout / nged_building_layout / Faged_building_layout** computation + retrieval ranking outputs  
+- **Toged / nged / Faged** computation + retrieval ranking outputs  
 - Designed for architectural research workflows
 
 ---
@@ -20,7 +20,7 @@ It can also be used independently to **construct graph representations of comple
 ## Installation
 
 ```bash
-pip install ged_building_layout-building-layout
+pip install ged-building-layout
 ```
 
 ---
@@ -28,7 +28,7 @@ pip install ged_building_layout-building-layout
 ## Minimal example (layout graph → CaG)
 
 ```python
-from ged_building_layout_building_layout import run_step2_then_step3, Step3Config
+from ged_building_layout import run_step2_then_step3, Step3Config
 
 run_step2_then_step3(
     json_folder="DATA_ROOT/json",
@@ -47,7 +47,7 @@ run_step2_then_step3(
 
 The complete step-by-step notebook and documentation are hosted on GitHub:
 
-- **GitHub repository**: https://github.com/songguoarchitect/ged_building_layout_building_layout  
+- **GitHub repository**: https://github.com/songguoarchitect/ged-building-layout  
 - Example notebook: `quick_start.ipynb`  
 
 > Note: PyPI does not reliably render local images (relative paths).  

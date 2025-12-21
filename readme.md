@@ -1,5 +1,9 @@
 ## A Function-aware Graph-based Layout Retrieval Approach for Open-plan Libraries
+<<<<<<< HEAD
 ged-building-layout is a research-oriented Python library for comparing spatial layouts and human behavioral patterns using function-aware graph representations.
+=======
+GED-building-layout is a research-oriented Python library for comparing spatial layouts and human behavioral patterns using function-aware graph representations.
+>>>>>>> 0edd4e7 (Update docs and minor fixes)
 In addition, this pipeline can also be used independently to construct graph representations of complex architectural layouts with open spaces, as well as to extract layout prototypes from such configurations.
 
 This document demonstrates a **minimal, reproducible workflow** for:
@@ -7,7 +11,11 @@ This document demonstrates a **minimal, reproducible workflow** for:
 1. Installing the library  
 2. Building a **layout graph** and a **behavioral graph**  
 3. Extracting **prototypes** for layouts
+<<<<<<< HEAD
 4. Computing multiple **graph edit distances (GED)**  
+=======
+4. Computing multiple **graph edit distances (GEDs)**  
+>>>>>>> 0edd4e7 (Update docs and minor fixes)
 
 ---
 ## 1) Installation
@@ -15,14 +23,14 @@ This document demonstrates a **minimal, reproducible workflow** for:
 If you run this example locally:
 
 ```bash
-pip install ged_building_layout-building-layout
+pip install ged-building-layout
 ```
 
 Or install from source:
 
 ```bash
-git clone https://github.com/songguoarchitect/GED-building-layout.git
-cd GED-building-layout
+git clone https://github.com/songguoarchitect/ged-building-layout.git
+cd 
 pip install -e .
 ```
 ---
@@ -55,13 +63,13 @@ OUTPUT_ROOT/
 │  ├─ variants/       # All CaGs generated based on different distance thresholds
 │  └─ selected/       # Optimal CaGs selected automatically by threshold
 ├─ step4_prototype/   # Layout prototypes
-└─ step5_faged_building_layout/       # Toged_building_layout, nged_building_layout, Faged_building_layout values and retrieval rankings
+└─ step5_faged/       # ToGED, nGED, FaGED values and retrieval rankings
 ```
 ### Set up
 ```python
 import sys, os
 sys.path.append(os.path.abspath(".."))  
-from ged_building_layout_building_layout import run_step0, run_step1, run_step2, run_step3, run_step4_then_step5
+from ged_building_layout import run_step0, run_step1, run_step2, run_step3, run_step4_then_step5
 
 from pathlib import Path
 
@@ -89,7 +97,7 @@ Available checks:
 - `"connectivity"`: connectivity visualization + isolated nodes report (to check if there are wrong connections)
 
 ```python
-from ged_building_layout_building_layout.step0_checks import run_step0_checks
+from ged_building_layout.step0_checks import run_step0_checks
 
 run_step0_checks(
     json_folder=str(JSON_DIR),
@@ -111,7 +119,7 @@ The input matrix can also be replaced by a matrix representing functional relati
 - Output: pickled graphs (`.pkl`) + optional visualizations
 
 ```python
-from ged_building_layout_building_layout.step1_behavior import run_step1_build_behavior_graphs
+from ged_building_layout.step1_behavior import run_step1_build_behavior_graphs
 
 # Example: you must fill this dict based on your experiment
 people_counts = {
@@ -139,7 +147,7 @@ Build function- and area-aware base graphs from JSON files. The JSON files are a
 - Output: `OUTPUT_ROOT/step2_basegraphs/*.pkl` (+ optional `.png`)
 
 ```python
-from ged_building_layout_building_layout import run_step2
+from ged_building_layout import run_step2
 
 run_step2(
     json_folder=str(JSON_DIR),
@@ -160,7 +168,7 @@ variant per file using the default heuristic (avg degree target 6–8).
   - selection log: `step3_selected_variant.csv`
 
 ```python
-from ged_building_layout_building_layout import run_step3, Step3Config
+from ged_building_layout import run_step3, Step3Config
 
 cfg3 = Step3Config(
     # avg_degree means the average degrees of nodes in the genated CaG. 6-8 are set as the optimal defaults according to experiments in university libraries; customize if you want
@@ -187,7 +195,7 @@ The function of each prototype node is determined based on the nodes within the 
 - Output: per-parameter folders under `OUTPUT_ROOT/step4_prototype/graphs/markov_*`
 
 ```python
-from ged_building_layout_building_layout.step4_prototype import run_step4_infomap, InfomapConfig
+from ged_building_layout.step4_prototype import run_step4_infomap, InfomapConfig
 
 cfg4 = InfomapConfig(
     input_folder=str(OUTPUT_ROOT / "step3_transform" / "selected"),
@@ -200,26 +208,26 @@ cfg4 = InfomapConfig(
 run_step4_infomap(cfg4)
 ```
 
-### Step5 — Compute Toged_building_layout / nged_building_layout / Faged_building_layout 
+### Step5 — Compute ToGED / nGED / FaGED 
 
 Compares *target graphs* (e.g., Step1 behavior graphs) to *reference prototype graphs* (Step4).
 
 - Target: `OUTPUT_ROOT/step1_behavior/*.pkl`
 - Reference: `OUTPUT_ROOT/step4_prototype/graphs/markov_*/`
-- Output: `OUTPUT_ROOT/step5_faged_building_layout/markov_*/...`
+- Output: `OUTPUT_ROOT/step5_faged/markov_*/...`
 
 ```python
 
-from ged_building_layout_building_layout.step5_faged_building_layout import Step5BatchConfig, run_step5_batch_from_markov_folders, merge_step5_csvs_to_long_table
+from ged_building_layout.step5_faged import Step5BatchConfig, run_step5_batch_from_markov_folders, merge_step5_csvs_to_long_table
 
 cfg5 = Step5BatchConfig(
     step4_graph_output_root=str(OUTPUT_ROOT / "step4_prototype" / "graphs"),
     target_folder=str(OUTPUT_ROOT / "step1_behavior"),
-    step5_output_root=str(OUTPUT_ROOT / "step5_faged_building_layout"),
+    step5_output_root=str(OUTPUT_ROOT / "step5_faged"),
     markov_folders=["markov_0_7"],  # markov_folders=["markov_0_7"],   # or ["markov_0_7", "markov_0_75"]
-    do_ged_building_layout=True,#False if you do not need topology-oriented graph edit distance
-    do_nged_building_layout=True,#False if you do not need normalized graph edit distance
-    do_faged_building_layout=True,
+    do_ged=True,#False if you do not need topology-oriented graph edit distance
+    do_nged=True,#False if you do not need normalized graph edit distance
+    do_faged=True,
     timeout=30,
 )
 
@@ -227,8 +235,8 @@ summary_df = run_step5_batch_from_markov_folders(cfg5)
 summary_df.head()
 
 long_df = merge_step5_csvs_to_long_table(
-    csv_root=str(OUTPUT_ROOT / "step5_faged_building_layout" / "markov_0_7"),
-    output_csv=str(OUTPUT_ROOT / "step5_faged_building_layout" / "markov_0_7" / "step5_long_ranked.csv")
+    csv_root=str(OUTPUT_ROOT / "step5_faged" / "markov_0_7"),
+    output_csv=str(OUTPUT_ROOT / "step5_faged" / "markov_0_7" / "step5_long_ranked.csv")
 )
 
 long_df.head()
@@ -239,7 +247,7 @@ long_df.head()
 #### A) Step2 → Step3 (layout graph representation only)
 ```python
 
-from ged_building_layout_building_layout import run_step2_then_step3, Step3Config
+from ged_building_layout import run_step2_then_step3, Step3Config
 
 df_sel = run_step2_then_step3(
     json_folder=str(JSON_DIR),
@@ -255,9 +263,9 @@ df_sel.head()
 #### B) Step4 → Step5 (if you already have Step3 CaGs and Step 1 Behavioral Graphs)
 ```python
 
-from ged_building_layout_building_layout.pipeline import Step4Step5Config, run_step4_then_step5
-from ged_building_layout_building_layout.step4_prototype import InfomapConfig
-from ged_building_layout_building_layout.step5_faged_building_layout import Step5BatchConfig
+from ged_building_layout.pipeline import Step4Step5Config, run_step4_then_step5
+from ged_building_layout.step4_prototype import InfomapConfig
+from ged_building_layout.step5_faged import Step5BatchConfig
 
 cfg = Step4Step5Config(
     step4=InfomapConfig(
@@ -270,10 +278,10 @@ cfg = Step4Step5Config(
     step5=Step5BatchConfig(
         step4_graph_output_root=str(OUTPUT_ROOT / "step4_prototype" / "graphs"),
         target_folder=str(OUTPUT_ROOT / "step1_behavior"),   
-        step5_output_root=str(OUTPUT_ROOT / "step5_faged_building_layout"),
-        do_ged_building_layout=True,
-        do_nged_building_layout=True,
-        do_faged_building_layout=True,
+        step5_output_root=str(OUTPUT_ROOT / "step5_faged"),
+        do_ged=True,
+        do_nged=True,
+        do_faged=True,
         timeout=30,
         markov_folders=["markov_0_7"] # markov_folders=["markov_0_7", "markov_0_75"]/markov_folders= None (run for all)
     ),
@@ -306,7 +314,7 @@ Step 3: Connectivity-aware Graphs (Layout)                           |
 Step 4: Graph Prototypes                                             |
   │                                                                  |
   ▼                                                                  ▼
-Step 5: Graph Edit Distance (ged_building_layout),Distance Ranking
+Step 5: Graph Edit Distance (GED),Distance Ranking
 
 ```
 <p align="center">
