@@ -47,9 +47,8 @@ package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
-[project.urls]
 
-Homepage = "https://github.com/songguoarchitect/faged"
-Source = "https://github.com/songguoarchitect/faged"
-Documentation = "https://github.com/songguoarchitect/faged#readme"
-Issues = "https://github.com/songguoarchitect/faged/issues"
+[project.urls]
+Homepage = "https://github.com/songguoarchitect/GED-building-layout"
+Repository = "https://github.com/songguoarchitect/GED-building-layout"
+Issues = "https://github.com/songguoarchitect/GED-building-layout/issues"
