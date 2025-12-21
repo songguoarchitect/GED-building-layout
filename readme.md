@@ -1,5 +1,5 @@
 ## A Function-aware Graph-based Layout Retrieval Approach for Open-plan Libraries
-ged_building_layout-building-layout is a research-oriented Python library for comparing spatial layouts and human behavioral patterns using function-aware graph representations.
+ged-building-layout is a research-oriented Python library for comparing spatial layouts and human behavioral patterns using function-aware graph representations.
 In addition, this pipeline can also be used independently to construct graph representations of complex architectural layouts with open spaces, as well as to extract layout prototypes from such configurations.
 
 This document demonstrates a **minimal, reproducible workflow** for:
