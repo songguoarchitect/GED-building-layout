@@ -333,8 +333,6 @@ Here we provide a detailed illustration of the proposed framework using a single
 ```bibtex
 @article{GuoKeeZhuang2026,
   title     = {A Function-Aware Graph-Based Layout Retrieval for Open-plan Libraries},
-  author    = {Guo, Song, Kee, Tris and Zhuang Weimin},
-  journal   = {Automation in Construction},
   year      = {2026}
 }
 ```
